@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "HaxeLink",
+      "type": "hl",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": {
+        "type": "haxe",
+        "args": "active configuration"
+      }
+    }
+  ]
+}

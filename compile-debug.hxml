@@ -1,0 +1,33 @@
+# Add Heaps as a library
+# This is the engine for the game
+-lib heaps
+
+# Add HashLink SDL as a library
+# This handles rendering n graphics n shit
+-lib hlsdl
+
+# Add HashLink OpenAL as a library
+# This handles the audio stuff
+-lib hlopenal
+
+# Set the main class the project starts from
+-main Main
+
+# Tells HashLink where to put the file
+-hl export/windows/debug/bin/Main.hl
+
+# Set our source dir
+-cp source
+
+# Allows for multiple apps/windows
+# This might be costly idk
+-D multidriver
+
+# Set where the stuff is
+-D resourcesPath=assets
+
+# Starting window size
+-D windowSize=1280x720
+
+# Starting window title
+-D windowTitle=Friday Night Funkin': Heaps Engine
