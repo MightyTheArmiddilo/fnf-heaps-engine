@@ -1,9 +1,5 @@
-# Haxe project
+# FNF Heaps Engine (Pending Title)
 
-This is an example Haxe project scaffolded by Visual Studio Code.
+An FNF engine built from the ground up made in Heaps instead of HaxeFlixel, which is a much better engine.
 
-Without further changes the structure is following:
-
- * `src/Main.hx`: Entry point Haxe source file
- * `build.hxml`: Haxe command line file used to build the project
- * `README.md`: This file
+Yeah that's it for now get outta here.
