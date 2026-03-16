@@ -29,6 +29,7 @@ class Signal<T:Function>
     {
       var handler = null;
 
+      // Hundrec??? :eyes:
       for (h in handlers)
       {
         if (h.listener == listener) handler = h;
