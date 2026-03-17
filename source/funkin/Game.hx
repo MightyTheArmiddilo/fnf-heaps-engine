@@ -1,5 +1,6 @@
 package funkin;
 
+import hxd.SceneEvents.InteractiveScene;
 import hxd.App;
 import hxd.Res;
 import hxd.res.Sound;
@@ -37,6 +38,13 @@ class Game extends App
     });
 
     setScene(Type.createInstance(startingScene, []));
+  }
+
+  override function setScene(scene:InteractiveScene, disposePrevious:Bool = true)
+  {
+    super.setScene(scene, disposePrevious);
+
+    if (scene is funkin.ui.Scene) cast(scene, funkin.ui.Scene).create();
   }
 
   override function update(dt:Float):Void

@@ -11,7 +11,7 @@ class Main
 
   static final title:String = 'Friday Night Funkin\': Heaps Engine';
 
-  static final startingScene:Class<h2d.Scene> = funkin.ui.FunkinScene;
+  static final startingScene:Class<h2d.Scene> = funkin.game.FunkinScene;
 
   static function main():Void
   {
