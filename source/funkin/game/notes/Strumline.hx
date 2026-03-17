@@ -40,6 +40,7 @@ class Strumline extends Object
         }
       }
       var strumNote = new Anim(frames, 24, strumlineNotes);
+      strumNote.smooth = true;
       strumNote.play(frames);
       strumNote.x += i * 150;
       strumNote.scaleX = 0.7;
