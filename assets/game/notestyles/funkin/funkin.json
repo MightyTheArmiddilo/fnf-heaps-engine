@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0",
+  "name": "Funkin'",
+  "author": "PhantomArcade",
+  "assets": {
+    "strum": {
+      "assetPath": "game/notestyles/funkin/assets/noteStrumline",
+      "scale": [0.7, 0.7],
+      "offsets": [0, 0],
+      "data": {
+        "left": {
+          "idle": { "prefix": "staticLeft" },
+          "press": { "prefix": "pressLeft", "offsets": [42.5, 42.5] },
+          "confirm": { "prefix": "confirmLeft" },
+          "confirmHold": { "prefix": "confirmHoldLeft" }
+        },
+        "down": {
+          "idle": { "prefix": "staticDown" },
+          "press": { "prefix": "pressDown", "offsets": [41, 41] },
+          "confirm": { "prefix": "confirmDown" },
+          "confirmHold": { "prefix": "confirmHoldDown" }
+        },
+        "up": {
+          "idle": { "prefix": "staticUp" },
+          "press": { "prefix": "pressUp", "offsets": [41, 41] },
+          "confirm": { "prefix": "confirmUp" },
+          "confirmHold": { "prefix": "confirmHoldUp" }
+        },
+        "right": {
+          "idle": { "prefix": "staticRight" },
+          "press": { "prefix": "pressRight", "offsets": [41, 43.5] },
+          "confirm": { "prefix": "confirmRight" },
+          "confirmHold": { "prefix": "confirmHoldRight" }
+        }
+      }
+    }
+  }
+}

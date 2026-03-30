@@ -19,11 +19,13 @@ IF ERRORLEVEL 2 set launch="n"
 IF %compile% == "release" set dir="export/windows/release/bin/"
 IF %compile% == "debug" set dir="export/windows/debug/bin/"
 
+ECHO Removing assets folder...
+RMDIR /S /Q %dir%assets
 ECHO Copying assets...
 XCOPY assets %dir%assets /E /I /Y
 
 ECHO Building game...
-haxe compile-%compile%.hxml
+haxe compile-%compile%.hxml %*
 IF %compile% == "release" (
     ECHO Compiling to exe...
     REM ^ stops new lines from being registered
@@ -41,6 +43,7 @@ IF %compile% == "release" (
     %HASHLINK%/openal.hdll ^
     %HASHLINK%/ui.hdll ^
     %HASHLINK%/uv.hdll ^
+    %HASHLINK%/heaps.hdll ^
     -lopengl32 -lOpenAL32 ^
     -lmingw32 -lSDL2 ^
     -ldbghelp -lws2_32 ^

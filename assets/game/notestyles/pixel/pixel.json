@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "name": "Pixel",
+  "author": "Moawling",
+  "pixel": true,
+  "assets": {
+    "strum": {
+      "assetPath": "game/notestyles/pixel/assets/arrows-pixels",
+      "scale": [6.0, 6.0],
+      "offsets": [28, 32],
+      "data": {
+        "left": {
+          "idle": { "prefix": "staticLeft" },
+          "press": { "prefix": "pressedLeft" },
+          "confirm": { "prefix": "confirmLeft" },
+          "confirmHold": { "prefix": "confirmLeft" }
+        },
+        "down": {
+          "idle": { "prefix": "staticDown" },
+          "press": { "prefix": "pressedDown" },
+          "confirm": { "prefix": "confirmDown" },
+          "confirmHold": { "prefix": "confirmDown" }
+        },
+        "up": {
+          "idle": { "prefix": "staticUp" },
+          "press": { "prefix": "pressedUp" },
+          "confirm": { "prefix": "confirmUp" },
+          "confirmHold": { "prefix": "confirmUp" }
+        },
+        "right": {
+          "idle": { "prefix": "staticRight" },
+          "press": { "prefix": "pressedRight" },
+          "confirm": { "prefix": "confirmRight" },
+          "confirmHold": { "prefix": "confirmRight" }
+        }
+      }
+    }
+  }
+}

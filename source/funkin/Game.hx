@@ -26,8 +26,6 @@ class Game extends App
 
   override function init()
   {
-    Res.initLocal();
-
     updateSignal = new Signal<Float->Void>(function(dt:Float) {
       for (h in updateSignal.handlers)
       {

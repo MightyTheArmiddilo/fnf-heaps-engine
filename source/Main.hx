@@ -17,8 +17,13 @@ class Main
   {
     trace('startup');
 
+    hxd.Res.initLocal();
+
     var startingApp = funkin.Host.newContext(new funkin.Game(startingScene));
     startingApp.win.resize(startingWidth, startingHeight);
+    @:privateAccess startingApp.win.window.center();
     startingApp.win.title = title;
+
+    funkin.data.NoteStyleHandler.initialize();
   }
 }
