@@ -21,7 +21,7 @@
 # Set our source dir
 -cp source
 
---macro funkin.macro.Prebuild.run()
+# --macro funkin.macro.Prebuild.run()
 --macro funkin.macro.Postbuild.run()
 
 -D debug
