@@ -1,0 +1,39 @@
+{
+  "dependencies": [
+    {
+      "name": "hashlink",
+      "type": "git",
+      "dir": null,
+      "ref": "64899c10173ec655f4cb3a6dce92c58c9aa662f9",
+      "url": "https://github.com/HaxeFoundation/hashlink"
+    },
+    {
+      "name": "hlsdl",
+      "type": "git",
+      "dir": "libs/sdl",
+      "ref": "6d5e7a25ff047fa1fd96e9aaaf7aa13eebba8ee5",
+      "url": "https://github.com/HaxeFoundation/hashlink"
+    },
+    {
+      "name": "hlopenal",
+      "type": "git",
+      "dir": "libs/openal",
+      "ref": "6d5e7a25ff047fa1fd96e9aaaf7aa13eebba8ee5",
+      "url": "https://github.com/HaxeFoundation/hashlink"
+    },
+    {
+      "name": "hxcpp",
+      "type": "git",
+      "dir": null,
+      "ref": "9d966035e9e6be595f8f058ef96c5c852c7de27d",
+      "url": "https://github.com/haxefoundation/hxcpp"
+    },
+    {
+      "name": "heaps",
+      "type": "git",
+      "dir": null,
+      "ref": "455d00e9b92aed27e4ca34fa2f71c2507d5cb97f",
+      "url": "https://github.com/HeapsIO/heaps"
+    }
+  ]
+}
