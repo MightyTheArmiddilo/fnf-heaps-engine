@@ -3,6 +3,9 @@ package funkin.util;
 import hxd.Res;
 import hxd.res.Any as RAny;
 
+/**
+ * A class of utilities related to game assets.
+ */
 class AssetUtil
 {
   public static function getFilesInDir(directory:String = '', ?checker:RAny->Bool):Array<RAny>
@@ -13,11 +16,6 @@ class AssetUtil
 
     for (item in dir)
     {
-      /*trace(item.entry.path);
-        trace(item.entry.name);
-        trace(item.entry.isDirectory);
-        if (checker != null) trace(checker(item)); */
-
       if (checker == null) items.push(item);
       else if (checker(item)) items.push(item);
 

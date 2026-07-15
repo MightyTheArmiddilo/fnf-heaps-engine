@@ -2,6 +2,9 @@ package funkin.util;
 
 import haxe.Constraints.Function;
 
+/**
+ * A class for calling to a group of functions.
+ */
 class Signal<T:Function>
 {
   public var handlers:Array<SignalHandler<T>> = [];

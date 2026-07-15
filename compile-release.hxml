@@ -19,6 +19,13 @@
 # Set our source dir
 -cp source
 
+--macro funkin.macro.Prebuild.run()
+--macro funkin.macro.Postbuild.run()
+
+-D hlgen.makefile=hxcpp
+
+-D hlgen.build.architecture=x64
+
 # Allows for multiple apps/windows
 # This might be costly idk
 -D multidriver

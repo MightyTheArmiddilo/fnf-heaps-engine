@@ -25,23 +25,3 @@ typedef UnnamedAnimationData =
 
   var ?renderType:String;
 }
-
-class Animation
-{
-  public var name:Null<String>;
-
-  public var frames:Array<SpritesheetAnimData>;
-
-  public var loop:Bool = false;
-
-  public var offsets:Array<Float> = [0, 0];
-
-  public var frameRate:Int = 24;
-
-  public var flip:Array<Bool> = [false, false];
-
-  public function new() {}
-
-  public function toString():String
-    return 'Animation<name: $name,frames: $frames,loop: $loop,offsets: $offsets,frameRate: $frameRate,flip: $flip>';
-}

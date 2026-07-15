@@ -1,21 +1,23 @@
 package funkin.game.notes;
 
+import funkin.data.SongData.SongNoteData;
 import funkin.graphics.Sprite;
 import funkin.game.notes.notestyles.NoteStyle;
 import funkin.data.NoteStyleHandler;
 
 /**
- * The static notes of a strumline that
- * mark when to hit the moving arrows.
+ * The moving notes that the player must hit.
  */
-class StrumlineNote extends Sprite
+class Note extends Sprite
 {
+  public var time:Float;
+
   public var noteStyleId(default, set):String = 'funkin';
 
   function set_noteStyleId(value:String):String
   {
     noteStyleId = value;
-    noteStyle.constructStrumNote(this, direction);
+    noteStyle.constructNote(this, direction);
     return noteStyleId;
   }
 
@@ -28,13 +30,15 @@ class StrumlineNote extends Sprite
 
   public var direction:Int = 0;
 
-  public function new(?parent:h2d.Object, noteStyleId:String = 'funkin', dir:Int = 0)
+  public function new(?parent:h2d.Object, noteStyleId:String = 'funkin', ?data:SongNoteData)
   {
     super(parent);
 
     this.noteStyleId = noteStyleId;
 
-    direction = dir;
-    noteStyle.constructStrumNote(this, direction);
+    direction = data.dir ?? 0;
+    time = data.time;
+    noteStyle.constructNote(this, direction);
+    playAnim('idle');
   }
 }

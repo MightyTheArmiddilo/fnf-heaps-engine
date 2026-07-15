@@ -18,6 +18,8 @@ typedef NoteStyleData =
 typedef NoteStyleAssetsData =
 {
   var strum:NoteStyleAssetData<StrumAssetData>;
+
+  var note:NoteStyleAssetData<NoteAssetData>;
 }
 
 typedef NoteStyleAssetData<T> =
@@ -45,4 +47,12 @@ typedef StrumNoteAssetData =
   var press:UnnamedAnimationData;
   var confirm:UnnamedAnimationData;
   var confirmHold:UnnamedAnimationData;
+}
+
+typedef NoteAssetData =
+{
+  var left:UnnamedAnimationData;
+  var down:UnnamedAnimationData;
+  var up:UnnamedAnimationData;
+  var right:UnnamedAnimationData;
 }

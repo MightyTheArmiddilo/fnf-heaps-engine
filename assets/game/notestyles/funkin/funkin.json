@@ -6,32 +6,41 @@
     "strum": {
       "assetPath": "game/notestyles/funkin/assets/noteStrumline",
       "scale": [0.7, 0.7],
-      "offsets": [0, 0],
       "data": {
         "left": {
-          "idle": { "prefix": "staticLeft" },
-          "press": { "prefix": "pressLeft", "offsets": [42.5, 42.5] },
+          "idle": { "prefix": "staticLeft", "offsets": [-42.5, -42.5] },
+          "press": { "prefix": "pressLeft" },
           "confirm": { "prefix": "confirmLeft" },
           "confirmHold": { "prefix": "confirmHoldLeft" }
         },
         "down": {
-          "idle": { "prefix": "staticDown" },
-          "press": { "prefix": "pressDown", "offsets": [41, 41] },
+          "idle": { "prefix": "staticDown", "offsets": [-41, -41] },
+          "press": { "prefix": "pressDown" },
           "confirm": { "prefix": "confirmDown" },
           "confirmHold": { "prefix": "confirmHoldDown" }
         },
         "up": {
-          "idle": { "prefix": "staticUp" },
-          "press": { "prefix": "pressUp", "offsets": [41, 41] },
+          "idle": { "prefix": "staticUp", "offsets": [-41, -41] },
+          "press": { "prefix": "pressUp" },
           "confirm": { "prefix": "confirmUp" },
           "confirmHold": { "prefix": "confirmHoldUp" }
         },
         "right": {
-          "idle": { "prefix": "staticRight" },
-          "press": { "prefix": "pressRight", "offsets": [41, 43.5] },
+          "idle": { "prefix": "staticRight", "offsets": [-41, -43.5] },
+          "press": { "prefix": "pressRight" },
           "confirm": { "prefix": "confirmRight" },
           "confirmHold": { "prefix": "confirmHoldRight" }
         }
+      }
+    },
+    "note": {
+      "assetPath": "game/notestyles/funkin/assets/notes",
+      "scale": [0.7, 0.7],
+      "data": {
+        "left": { "prefix": "noteLeft" },
+        "down": { "prefix": "noteDown" },
+        "up": { "prefix": "noteUp" },
+        "right": { "prefix": "noteRight" }
       }
     }
   }

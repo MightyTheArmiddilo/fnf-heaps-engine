@@ -34,6 +34,16 @@
           "confirmHold": { "prefix": "confirmRight" }
         }
       }
+    },
+    "note": {
+      "assetPath": "game/notestyles/pixel/assets/arrows-pixels",
+      "scale": [6.0, 6.0],
+      "data": {
+        "left": { "prefix": "noteLeft" },
+        "down": { "prefix": "noteDown" },
+        "up": { "prefix": "noteUp" },
+        "right": { "prefix": "noteRight" }
+      }
     }
   }
 }
