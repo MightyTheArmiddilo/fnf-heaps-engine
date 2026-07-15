@@ -1,5 +1,7 @@
 package;
 
+import funkin.input.Controls.KeyCodes;
+import funkin.input.Controls.ControlEvent;
 import hxd.res.Loader;
 import hxd.fs.LocalFileSystem;
 import funkin.Global;
@@ -36,6 +38,11 @@ class Main
     startingApp.win.title = title;
     startingApp.win.vsync = false;
 
+    initializeClasses();
+  }
+
+  static function initializeClasses():Void
+  {
     trace('Initializing classes...');
 
     kinetic.ui.KineticUI.initialize();
@@ -52,5 +59,13 @@ class Main
   static function setupFileSystem(assetPath:String):Void
   {
     hxd.Res.loader = new Loader(new LocalFileSystem(assetPath, null));
+  }
+
+  static function loopFunc(_:Float):Void
+  {
+    if (hxd.Key.isPressed(KeyCodes.F5))
+    {
+      funkin.util.ReloadUtil.reloadAssets();
+    }
   }
 }

@@ -7,6 +7,8 @@ import funkin.util.interfaces.IKeyReciever;
  */
 class Scene extends h2d.Scene implements IKeyReciever
 {
+  public var constructor:() -> h2d.Scene;
+
   public function new()
   {
     super();

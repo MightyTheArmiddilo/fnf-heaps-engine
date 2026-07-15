@@ -123,4 +123,13 @@ class FunkinScene extends MusicBeatScene
       playerStrumline.notes.removeChild(playerStrumline.notes.children[0]);
     }
   }
+
+  override function dispose()
+  {
+    super.dispose();
+
+    inst.stop();
+    oppVocals.stop();
+    playerVocals.stop();
+  }
 }
