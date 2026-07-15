@@ -48,10 +48,7 @@ class Compile
 
     if (isDebug) setHaxeDefine('debug');
     else
-    {
       setHaxeDefine('hlgen.makefile', 'hxcpp');
-      setHaxeDefine('hlgen.build.architecture', 'x64');
-    }
 
     setHaxeDefine('multidriver');
 
