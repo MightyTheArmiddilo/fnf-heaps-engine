@@ -32,12 +32,12 @@ class Scene extends h2d.Scene implements IKeyReciever
 
   public function initKeyEvents():Void
   {
-    Controls.keyDown.add(keyDown);
-    Controls.keyUp.add(keyUp);
+    Input.keyDown.add(keyDown);
+    Input.keyUp.add(keyUp);
     Input.keyPress.add(keyPush);
-    Controls.mousePush.add(mousePush);
-    Controls.mouseRelease.add(mouseRelease);
-    Controls.mouseReleaseOutside.add(mouseReleaseOutside);
-    Controls.mouseWheel.add(mouseWheel);
+    Input.mousePush.add(mousePush);
+    Input.mouseRelease.add(mouseRelease);
+    Input.mouseReleaseOutside.add(mouseReleaseOutside);
+    Input.mouseWheel.add(mouseWheel);
   }
 }
