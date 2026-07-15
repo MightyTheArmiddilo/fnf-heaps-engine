@@ -1,5 +1,7 @@
 package;
 
+import hxd.res.Loader;
+import hxd.fs.LocalFileSystem;
 import funkin.Global;
 
 using StringTools;
@@ -22,7 +24,11 @@ class Main
   {
     trace(' KINETIC ENGINE '.bg_orange().bold() + ' Let\'s get funky!');
 
-    hxd.Res.initLocal();
+    #if REDIRECT_ASSETS
+    setupFileSystem('../../../../assets');
+    #else
+    setupFileSystem('assets');
+    #end
 
     var startingApp = Global.newContext(new funkin.Game(startingScene));
     startingApp.win.resize(startingWidth, startingHeight);
@@ -35,5 +41,16 @@ class Main
     kinetic.ui.KineticUI.initialize();
 
     funkin.data.NoteStyleHandler.initialize();
+  }
+
+  /**
+   * `resourcesPath` pointing to a non existent path makes compile die cuz embed,
+   * so instead we do it like this, allowing for things like `REDIRECT_ASSETS`.
+   * 
+   * @param assetPath 
+   */
+  static function setupFileSystem(assetPath:String):Void
+  {
+    hxd.Res.loader = new Loader(new LocalFileSystem(assetPath, null));
   }
 }

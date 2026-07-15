@@ -16,6 +16,13 @@ class Compile
   static inline final launchDefault:String = 'l';
   static var shouldLaunch:Bool;
 
+  static final compileArgs:Array<String> = ['c', 'compile', '-c', '--c', '-compile', '--compile'];
+  static final skipArgs:Array<String> = ['s', 'skip', '-s', '--s', '-skip', '--skip'];
+  static inline final compileDefault:String = 'c';
+  static var shouldCompile:Bool;
+
+  static final REDIRECT_ASSETS:Bool = true;
+
   static function main():Void
   {
     var passedArgs = Sys.args();
@@ -30,55 +37,65 @@ class Compile
     if (passedArgs[1] == null) passedArgs[1] = launchDefault;
     shouldLaunch = passedArgs[1] == 'l';
 
-    addHaxeLibrary('heaps');
+    if (compileArgs.contains(passedArgs[2])) passedArgs[2] = 'c';
+    if (skipArgs.contains(passedArgs[2])) passedArgs[2] = 's';
+    if (passedArgs[2] == null) passedArgs[2] = compileDefault;
+    shouldCompile = passedArgs[2] == 'c';
 
-    addHaxeLibrary('hlsdl');
-
-    addHaxeLibrary('hlopenal');
-
-    setHaxeMain('Main');
-
-    var compilePath = isDebug ? 'export/windows/debug/bin/Main.hl' : 'export/windows/release/c/Main.c';
-    setHLCompilePath(compilePath);
-
-    setSourcePath('source');
-
-    addHaxeMacro('funkin.macro.Prebuild', 'run');
-    addHaxeMacro('funkin.macro.Postbuild', 'run');
-
-    if (isDebug) setHaxeDefine('debug');
-    else
-      setHaxeDefine('hlgen.makefile', 'hxcpp');
-
-    setHaxeDefine('multidriver');
-
-    setHaxeDefine('resourcesPath', 'assets');
-
-    setHaxeDefine('windowSize', '1280x720');
-
-    setHaxeDefine('windowTitle', 'Friday Night Funkin\': Heaps Engine');
-
-    /*var i = 0;
-      var args = [];
-      while (i < buildArgs.length / 2)
-      {
-        args.push(buildArgs[i * 2] + ' ' + buildArgs[i * 2 + 1]);
-        i++;
-      }
-
-      trace(args.join('\n')); */
-
-    if (isDebug) info('Compiling debug build...');
-    else
-      info('Compiling release build...');
-
-    var code = Sys.command('haxe', buildArgs);
-
-    if (code == 0) info('Done!');
-    else
+    if (shouldCompile)
     {
-      error('There was an error with compiling!');
-      return;
+      addHaxeLibrary('heaps');
+
+      addHaxeLibrary('hlsdl');
+
+      addHaxeLibrary('hlopenal');
+
+      setHaxeMain('Main');
+
+      var compilePath = isDebug ? 'export/windows/debug/bin/Main.hl' : 'export/windows/release/c/Main.c';
+      setHLCompilePath(compilePath);
+
+      setSourcePath('source');
+
+      addHaxeMacro('funkin.macro.Prebuild', 'run');
+      addHaxeMacro('funkin.macro.Postbuild', 'run');
+
+      if (isDebug) setHaxeDefine('debug');
+      else
+        setHaxeDefine('hlgen.makefile', 'hxcpp');
+
+      setHaxeDefine('multidriver');
+
+      setHaxeDefine('resourcesPath', 'assets');
+
+      if (REDIRECT_ASSETS) setHaxeDefine('REDIRECT_ASSETS');
+
+      setHaxeDefine('windowSize', '1280x720');
+
+      setHaxeDefine('windowTitle', 'Friday Night Funkin\': Heaps Engine');
+
+      /*var i = 0;
+        var args = [];
+        while (i < buildArgs.length / 2)
+        {
+          args.push(buildArgs[i * 2] + ' ' + buildArgs[i * 2 + 1]);
+          i++;
+        }
+
+        trace(args.join('\n')); */
+
+      if (isDebug) info('Compiling debug build...');
+      else
+        info('Compiling release build...');
+
+      var code = Sys.command('haxe', buildArgs);
+
+      if (code == 0) info('Done!');
+      else
+      {
+        error('There was an error with compiling!');
+        return;
+      }
     }
 
     if (shouldLaunch)
