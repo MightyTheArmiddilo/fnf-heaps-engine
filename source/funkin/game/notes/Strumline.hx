@@ -58,6 +58,7 @@ class Strumline extends Object
     {
       var strumNote = new StrumlineNote(strumlineNotes, noteStyleId, i);
       strumNote.playAnim('idle');
+      strumNote.resetCenter();
       strumNote.x += i * noteSpacing;
     }
   }
@@ -70,6 +71,7 @@ class Strumline extends Object
       {
         cast(note, StrumlineNote).noteStyleId = noteStyleId;
         cast(note, StrumlineNote).playAnim('idle');
+        cast(note, StrumlineNote).resetCenter();
       }
     }
 

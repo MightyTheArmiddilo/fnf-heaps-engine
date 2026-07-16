@@ -14,6 +14,10 @@ class NoteStyleHandler
 
   public static function initialize():Void
   {
+    for (noteStyle in noteStyles)
+      noteStyle = null;
+    noteStyles.clear();
+
     var jsons = AssetUtil.getFilesInDir('game/notestyles', function(res:RAny) {
       return res.entry.extension == 'json';
     });

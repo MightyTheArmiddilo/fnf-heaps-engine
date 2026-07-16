@@ -8,25 +8,25 @@
       "scale": [0.7, 0.7],
       "data": {
         "left": {
-          "idle": { "prefix": "staticLeft", "offsets": [-42.5, -42.5] },
+          "idle": { "prefix": "staticLeft" },
           "press": { "prefix": "pressLeft" },
           "confirm": { "prefix": "confirmLeft" },
           "confirmHold": { "prefix": "confirmHoldLeft" }
         },
         "down": {
-          "idle": { "prefix": "staticDown", "offsets": [-41, -41] },
+          "idle": { "prefix": "staticDown" },
           "press": { "prefix": "pressDown" },
           "confirm": { "prefix": "confirmDown" },
           "confirmHold": { "prefix": "confirmHoldDown" }
         },
         "up": {
-          "idle": { "prefix": "staticUp", "offsets": [-41, -41] },
+          "idle": { "prefix": "staticUp" },
           "press": { "prefix": "pressUp" },
           "confirm": { "prefix": "confirmUp" },
           "confirmHold": { "prefix": "confirmHoldUp" }
         },
         "right": {
-          "idle": { "prefix": "staticRight", "offsets": [-41, -43.5] },
+          "idle": { "prefix": "staticRight" },
           "press": { "prefix": "pressRight" },
           "confirm": { "prefix": "confirmRight" },
           "confirmHold": { "prefix": "confirmHoldRight" }

@@ -1,5 +1,8 @@
 package funkin.game;
 
+import h2d.Text;
+import funkin.graphics.Tile;
+import funkin.graphics.Sprite;
 import funkin.game.notes.StrumlineNote;
 import hxd.Event;
 import funkin.util.vslice.VSliceChartConverter;
@@ -30,6 +33,9 @@ class FunkinScene extends MusicBeatScene
   override public function create()
   {
     super.create();
+
+    var bg = new Sprite(this);
+    bg.tile = Tile.fromh2d(h2d.Tile.fromColor(0xFF555555, width, height));
 
     inst = Res.load('game/songs/$songId/Inst.ogg').toSound();
     oppVocals = Res.load('game/songs/$songId/Voices-dad.ogg').toSound();

@@ -1,5 +1,7 @@
 package funkin.game.notes;
 
+import funkin.graphics.Tile;
+import h2d.RenderContext;
 import funkin.graphics.Sprite;
 import funkin.game.notes.notestyles.NoteStyle;
 import funkin.data.NoteStyleHandler;
@@ -36,5 +38,23 @@ class StrumlineNote extends Sprite
 
     direction = dir;
     noteStyle.constructStrumNote(this, direction);
+  }
+
+  override function playAnim(name:String)
+  {
+    super.playAnim(name);
+  }
+
+  override function set_tile(t:Tile):Tile
+  {
+    t.dx = centerX / 2 - t.width / 4;
+    t.dy = centerY / 2 - t.height / 4;
+    if (curAnim != null)
+    {
+      t.dx += curAnim.offsets[0];
+      t.dy += curAnim.offsets[1];
+    }
+
+    return super.set_tile(t);
   }
 }

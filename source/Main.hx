@@ -24,6 +24,8 @@ class Main
 
   static function main():Void
   {
+    hl.UI.closeConsole();
+
     trace(' KINETIC ENGINE '.bg_orange().bold() + ' Let\'s get funky!');
 
     #if REDIRECT_ASSETS
@@ -37,6 +39,7 @@ class Main
     @:privateAccess startingApp.win.window.center();
     startingApp.win.title = title;
     startingApp.win.vsync = false;
+    startingApp.win.setIcon(funkin.macro.AppIcon.getAppIcon().toImage().toBitmap());
 
     initializeClasses();
   }

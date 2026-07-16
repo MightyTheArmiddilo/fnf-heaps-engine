@@ -51,11 +51,24 @@ class Sprite extends Drawable
   public var skewX:Float = 0;
   public var skewY:Float = 0;
 
-  public function new(?parent:Object)
+  public var showHitbox:Bool = false;
+  public var hitbox:Sprite;
+
+  public var centerX:Float = 0;
+  public var centerY:Float = 0;
+
+  public function new(?parent:Object, hasHitbox:Bool = false)
   {
     super(parent);
 
     animations = [];
+
+    if (hasHitbox)
+    {
+      hitbox = new Sprite(this);
+      hitbox.tile = Tile.fromh2d(h2d.Tile.fromColor(0xFFFF00FF, 1, 1, 0.25));
+      hitbox.visible = showHitbox;
+    }
   }
 
   public function playAnim(name:String):Void
@@ -116,6 +129,12 @@ class Sprite extends Drawable
     skewY = v;
   }
 
+  public function resetCenter():Void
+  {
+    centerX = tile.width / 2;
+    centerY = tile.height / 2;
+  }
+
   override function sync(ctx:RenderContext)
   {
     super.sync(ctx);
@@ -148,6 +167,17 @@ class Sprite extends Drawable
       tile = curAnim.getTileFromIndex(curFrame);
 
       if (finished) isPlaying = false;
+    }
+
+    if (hitbox != null)
+    {
+      hitbox.tile.setSize(tile.width, tile.height);
+      hitbox.tile.dx = tile.dx / 2;
+      hitbox.tile.dy = tile.dy / 2;
+      hitbox.tile.rotation = tile.rotation;
+      hitbox.tile.skewX = tile.skewX;
+      hitbox.tile.skewY = tile.skewY;
+      hitbox.visible = showHitbox;
     }
   }
 
